@@ -1,5 +1,5 @@
 dependencies:
-  - python=3.8 # Specify the Python version you want, e.g., 3.8
+  - python=3.11.5 # Specify the Python version you want, e.g., 3.8
   - pip
   - pip:
       - streamlit
