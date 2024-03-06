@@ -1,7 +1,6 @@
 dependencies:
   - python=3.11.5 # Specify your desired Python version here
   - streamlit
-  - python-dotenv
   - pip:
       - crewai # Assuming this package needs to be installed from PyPI
       - langchain-community # Assuming this package needs to be installed from PyPI
