@@ -1,4 +1,5 @@
 streamlit
+instructor
 python-dotenv
 crewai
 langchain-community
