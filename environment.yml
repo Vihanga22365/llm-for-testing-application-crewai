@@ -1,9 +1,16 @@
+name: my_enve
+channels:
+  - conda-forge
+  - defaults
 dependencies:
-  - python=3.11.5 # Specify your desired Python version here
-  - streamlit
-  - python-dotenv
-  - crewai # Assuming this package needs to be installed from PyPI
-  - langchain-community # Assuming this package needs to be installed from PyPI
-  - langchain # Assuming this package needs to be installed from PyPI
-  - langchain-core # Assuming this package needs to be installed from PyPI
-  - langchain-openai # Assuming this package needs to be installed from PyPI
+  - python=3.8 # Specify the Python version you want, e.g., 3.8
+  - pip
+  - pip:
+      - streamlit
+      - instructor
+      - python-dotenv
+      - crewai
+      - langchain-community
+      - langchain
+      - langchain-core
+      - langchain-openai
