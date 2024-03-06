@@ -51,7 +51,7 @@ def get_specific_libraries_versions(libraries):
 def main():
     st.title('Check Specific Libraries Versions')
 
-    libraries = ['streamlit']
+    libraries = ['python-dotenv', 'streamlit', 'crewai', 'langchain-community', 'langchain', 'langchain-core', 'langchain-openai']
     
     if st.button('Show Versions of Specific Libraries'):
         libraries_versions = get_specific_libraries_versions(libraries)
