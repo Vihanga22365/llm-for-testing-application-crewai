@@ -5,3 +5,4 @@ langchain-community
 langchain
 langchain-core
 langchain-openai
+git+https://github.com/joaomdmoura/crewAI.git@main
