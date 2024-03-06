@@ -120,27 +120,27 @@ def create_test_cases(test_scenario):
         Don't miss any of the test cases. give all genarated positive and negative test cases.      
         """,
         expected_output="""
-            All possible positive and negative test cases list according to below template. Please format the response with a newline between each field as shown below.
+            All possible positive and negative test cases list according to below template.
 
             Positive Test Cases :
                 1. 
-                    [New Line] Test Case -
-                    [New Line] Test Data -
-                    [New Line] Expected Result -
+                    Test Case -
+                    Test Data -
+                    Expected Result -
                 2. 
-                    [New Line] Test Case -
-                    [New Line] Test Data -
-                    [New Line] Expected Result -
+                    Test Case -
+                    Test Data -
+                    Expected Result -
 
             Negative Test Cases :
                 1. 
-                    [New Line] Test Case -
-                    [New Line] Test Data -
-                    [New Line] Expected Result -
+                    Test Case -
+                    Test Data -
+                    Expected Result -
                 2. 
-                    [New Line] Test Case -
-                    [New Line] Test Data -
-                    [New Line] Expected Result -
+                    Test Case -
+                    Test Data -
+                    Expected Result -
         """,
         context=[write_positive_test_cases, write_negative_test_cases],
         agent=quality_assuarance_engineer
