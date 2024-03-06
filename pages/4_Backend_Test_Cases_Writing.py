@@ -1,6 +1,6 @@
 import streamlit as st
 from dotenv import load_dotenv
-from crewai import Agent, Task, Crew, Process
+# from crewai import Agent, Task, Crew, Process
 from langchain_openai import ChatOpenAI
 import os
 import time
@@ -185,7 +185,7 @@ if generate_test_cases_btn:
                     Non-Mandatory Request Payload Parameters - {non_mandatory_request_parameters} \n
                     Data Transfer Method - {data_transfer_method} \n
             """
-            result = create_test_cases(test_scenario)
-            st.text_area("Generated Test Cases", value=result, height=1000, key='test_cases_list')
+            # result = create_test_cases(test_scenario)
+            st.text_area("Generated Test Cases", value=test_scenario, height=1000, key='test_cases_list')
 
 
