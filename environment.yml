@@ -1,9 +1,8 @@
 dependencies:
   - python=3.11.5 # Specify your desired Python version here
   - streamlit
-  - pip:
-      - crewai # Assuming this package needs to be installed from PyPI
-      - langchain-community # Assuming this package needs to be installed from PyPI
-      - langchain # Assuming this package needs to be installed from PyPI
-      - langchain-core # Assuming this package needs to be installed from PyPI
-      - langchain-openai # Assuming this package needs to be installed from PyPI
+  - crewai # Assuming this package needs to be installed from PyPI
+  - langchain-community # Assuming this package needs to be installed from PyPI
+  - langchain # Assuming this package needs to be installed from PyPI
+  - langchain-core # Assuming this package needs to be installed from PyPI
+  - langchain-openai # Assuming this package needs to be installed from PyPI
