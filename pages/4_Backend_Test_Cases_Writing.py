@@ -26,7 +26,7 @@ st.write("")
 st.write("")
 
 api_name = st.text_input(type="default", label="API Name", help="Please Enter the Name of the API Endpoint here.")
-http_method = st.text_input(type="default", label="HTTP Method of API", help="Please Enter the HTTP method of the API Ex: POST, GET, DELETE, PUT etc.")
+http_method = st.selectbox('HTTP Method of API', ('POST', 'GET', 'PUT', 'DELETE', 'PATCH'))
 type_of_end_users = st.text_input(type="default", label="Type of End Users", help="Enter the type of the End Users as per their roles." )
 main_objective = st.text_area(label="Main Business  Objective of API", help="Enter the Primary Business Objective to be tested.")
 sub_objective = st.text_area(label="Sub Business Objectives of API", help="Enter Sub Business Objectiives to be tested. These objectives should be secondary objectives than the Primary Objective.")
