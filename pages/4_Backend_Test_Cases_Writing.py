@@ -40,7 +40,7 @@ st.write("")
 st.write("")
 st.write("")
 
-generate_test_cases_btn = st.button('Generate Test Cases', key='generate_test_cases_btn', type="primary", use_container_width=True, help="Click for Write Test Cases")
+generate_test_cases_btn = st.button('Generate Test Cases', key='generate_test_cases_btn', type="primary", use_container_width=True, help="Click for Write Test Cases to the Backend")
 
 os.environ['OPENAI_API_KEY'] = st.secrets["OPENAI_API_KEY"]
 os.environ['LANGCHAIN_API_KEY'] = st.secrets["LANGCHAIN_API_KEY"]
