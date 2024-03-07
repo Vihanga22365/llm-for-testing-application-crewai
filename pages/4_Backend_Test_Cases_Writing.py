@@ -54,20 +54,20 @@ def create_test_cases(test_scenario):
         goal='Write the all possible positive and negative test cases',
         verbose=True,
         backstory="""
-        You are Expert Quality Assuarance Engineer, and specilist for write backend test cases
-        Your responsibility is write the possible poitive and negative test cases and expected results with covering all points for given test scenario.
+        You are Expert Quality Assuarance Engineer, and specilist for write backend API test cases
+        Your responsibility is write the possible Backend API poitive and negative test cases and expected results with covering all points for given test scenario.
         When writing the test cases, follow  QA standards, and keywords.
         Write the test cases according to test cases document written style.
         """,
-        memory=True
+        allow_delegation=False
     )
 
     write_positive_test_cases = Task(
         description=f"""
-            This is the Scenario. I want to write the all positive test cases for this scenario. 
+            This is the Scenario. I want to write the all positive Backend API test cases for this scenario.
 
             {test_scenario}
-        
+
             Think this above scenario step by step, and consider each and every point.
             write the all possible positive test cases for this scenario.
             When you write the test cases, cover all possible positive test cases.
@@ -75,7 +75,7 @@ def create_test_cases(test_scenario):
             When writing the test cases, follow  QA standards, and keywords (use 'verify' keyword if want).
         """,
         expected_output="""
-            All possible positive test cases list according to below template.
+            All possible Backend API positive test cases list according to below template.
 
             Positive test cases :
             1. Test Case : << When QA engineer write the test cases, they follow the commen pattern for write single test case. You also need follow that pattern for write the test case >>
@@ -85,23 +85,24 @@ def create_test_cases(test_scenario):
                 Test Data : << You need to write test data according to test case document >>
                 Expected Output : << You need to write expected output according to test case document >>
         """,
-        agent=quality_assuarance_engineer
+        agent=quality_assuarance_engineer,
+        async_execution=True,
     )
 
     write_negative_test_cases = Task(
         description=f"""
-            This is the Scenario. I want to write the all negative test cases for this scenario. 
+            This is the Scenario. I want to write the all Backend API negative test cases for this scenario.
 
             {test_scenario}
-        
+
             Think this above scenario step by step, and consider each and every point.
             Write the all possible negative test cases for this scenario.
             When you write the test cases, cover all possible negative test cases.
             Don't miss any of the negative test case, try to cover every negative test cases for this scenario.
-            When writing the test cases, follow  QA standards, and keywords (use 'verify' keyword if want). 
+            When writing the test cases, follow  QA standards, and keywords (use 'verify' keyword if want).
         """,
         expected_output="""
-            All posible negative test cases list according to below template.
+            All posible Backend API negative test cases list according to below template.
 
             Negative test cases :
             1. Test Case : << When QA engineer write the test cases, they follow the commen pattern for write single test case. You also need follow that pattern for write the test case >>
@@ -111,36 +112,33 @@ def create_test_cases(test_scenario):
                 Test Data : << You need to write test data according to test case document >>
                 Expected Output : << You need to write expected output according to test case document >>
         """,
-        agent=quality_assuarance_engineer
+        agent=quality_assuarance_engineer,
+        async_execution=True,
     )
 
     combine_all_test_cases = Task(
         description=f"""
-        After write the all possible positive and negative test cases, combine all the positive and negative test cases together.
-        Don't miss any of the test cases. give all genarated positive and negative test cases.      
+        After write the all possible Backend API positive and negative test cases, combine all the positive and negative test cases together.
+        Don't miss any of the test cases. give all genarated positive and negative test cases.
         """,
         expected_output="""
-            All possible positive and negative test cases list according to below template.
+            All possible Backend API positive and negative test cases list according to below template.
 
-            Positive Test Cases :
-                1. 
-                    Test Case -
-                    Test Data -
-                    Expected Result -
-                2. 
-                    Test Case -
-                    Test Data -
-                    Expected Result -
+            Positive test cases :
+                1. Test Case -
+                Test Data -
+                Expected Result -
+                2. Test Case -
+                Test Data -
+                Expected Result -
 
-            Negative Test Cases :
-                1. 
-                    Test Case -
-                    Test Data -
-                    Expected Result -
-                2. 
-                    Test Case -
-                    Test Data -
-                    Expected Result -
+            Negative test cases :
+                1. Test Case -
+                Test Data -
+                Expected Result -
+                2. Test Case -
+                Test Data -
+                Expected Result
         """,
         context=[write_positive_test_cases, write_negative_test_cases],
         agent=quality_assuarance_engineer
@@ -150,8 +148,8 @@ def create_test_cases(test_scenario):
     crew = Crew(
         agents=[quality_assuarance_engineer],
         tasks=[write_positive_test_cases, write_negative_test_cases, combine_all_test_cases],
-        verbose=True,
-        manager_llm=ChatOpenAI(model_name="gpt-4-0125-preview", temperature=0.0),
+        verbose=2,
+        manager_llm=ChatOpenAI(model_name="gpt-4-0125-preview", temperature=0.5),
         process=Process.sequential
     )
 
