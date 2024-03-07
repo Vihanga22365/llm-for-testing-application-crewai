@@ -1,10 +1,5 @@
-altair
-numpy
-pandas
-pydeck
 streamlit
 python-dotenv
-openai
 langchain-community 
 langchain 
 langchain-core 
